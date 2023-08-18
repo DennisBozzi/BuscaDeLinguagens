@@ -16,29 +16,28 @@ namespace BuscaDeLinguagens
             //Adicionando Linguagem a lista Linguagens
             lista.adicionarLinguagem(new Linguagem(1990, "AMOS BASIC", "François Lionet, Constantin Sotiropoulos", "STO BASIC"));
             lista.adicionarLinguagem(new Linguagem(1991, "Visual Basic", "Alan Cooper", "QuickBasic"));
-            lista.adicionarLinguagem(new Linguagem(1995, "Ruby", "Yukihiro Matsumoto", "Smalltak;Perl"));
-            lista.adicionarLinguagem(new Linguagem(2009, "Go", "Google", "C;Oberon;Limbo;Smalltalk"));
+            lista.adicionarLinguagem(new Linguagem(1995, "Ruby", "Yukihiro Matsumoto", "Smalltak; Perl"));
+            lista.adicionarLinguagem(new Linguagem(2009, "Go", "Google", "C; Oberon; Limbo; Smalltalk"));
             lista.adicionarLinguagem(new Linguagem(2023, "LinguagemRemovida", "LinguagemRemovida", "LinguagemRemovida"));
-            lista.adicionarLinguagem(new Linguagem());
 
             //Removendo a última Linguagem adicionada
             lista.removerLinguagem(lista.linguagens[4]);
 
-            //Buscando por nome e imprimindo
-            lista.buscarLinguagemPorNome("Visual").imprimir();
+            //Buscando por nome
+            lista.buscarLinguagemPorNome("Go");
 
-            //Buscando por ano e imprimindo
-            lista.buscarPorAno(0).imprimir();
+            //Buscando por ano
+            lista.buscarPorAno(0); //Retorna null
+            lista.buscarPorAno(1991);
 
-            //Buscando Desenvolvedor chefe e imprimindo
-            lista.buscarPorDesenvolvedorChefe("Matsumoto").imprimir();
+            //Buscando Desenvolvedor chefe
+            lista.buscarPorDesenvolvedorChefe("Matsumoto");
 
-            //Buscando por Predescessor e imprimindo
-            lista.buscarPorPredescessor("Smalltalk").imprimir();
-
+            //Buscando por Predescessor
+            lista.buscarPorPredescessor("Smalltalk");
 
             Console.ReadKey();
-               
+
         }
     }
 }

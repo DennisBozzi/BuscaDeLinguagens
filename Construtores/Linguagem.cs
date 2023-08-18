@@ -22,24 +22,15 @@ namespace BuscaDeLinguagens
             this.predecessores = predecessores;
         }
 
-        //Imprime a linguagem - Se seu nome for nulo, ela retorna null.
+        //Imprime a linguagem
         public void imprimir()
         {
-
-            if (nome != null)
-            {
-                Console.WriteLine("\n----------------------------------------------------------------------");
-                Console.WriteLine($"Nome: {nome}");
-                Console.WriteLine($"Ano de Criação: {ano}");
-                Console.WriteLine($"Desenvolvedor Chefe: {desenvolvedorChefe}");
-                Console.WriteLine($"Predecessores: {predecessores}");
-                Console.WriteLine("----------------------------------------------------------------------");
-            }
-            else
-            {
-                Console.WriteLine("\nnull");
-            }
-
+            Console.WriteLine("\n----------------------------------------------------------------------");
+            Console.WriteLine($"Nome: {nome}");
+            Console.WriteLine($"Ano de Criação: {ano}");
+            Console.WriteLine($"Desenvolvedor Chefe: {desenvolvedorChefe}");
+            Console.WriteLine($"Predecessores: {predecessores}");
+            Console.WriteLine("----------------------------------------------------------------------");
         }
     }
 }

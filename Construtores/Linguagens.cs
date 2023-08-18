@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,78 +29,58 @@ namespace BuscaDeLinguagens
         //Buscando por nome utilizando StartsWith
         public Linguagem buscarLinguagemPorNome(string nome)
         {
-            Linguagem linguagemEncontrada = new Linguagem();
 
-            foreach(var linguagem in linguagens)
+            var linguagem = linguagens.FirstOrDefault(ling => ling.nome.StartsWith(nome)); //Utilizando StartsWith
+
+            if (linguagem != null)
             {
-                if (linguagem.nome != null) //Confere se o nome da linguagem não é nulo
-                {
-                    if (linguagem.nome.StartsWith(nome)) //Utilizando o StartsWith
-                    {
-                        linguagemEncontrada = linguagem;
-                        break;
-                    }
-                }
+                linguagem.imprimir();
+                return linguagem;
             }
 
-            return linguagemEncontrada;
+            return null;
         }
 
         //Buscando por ano com Equals
         public Linguagem buscarPorAno(int ano)
         {
-            Linguagem linguagemEncontrada = new Linguagem();
+            var linguagem = linguagens.FirstOrDefault(ling => ling.ano.Equals(ano)); //Utilizando Equals
 
-            foreach (var linguagem in linguagens)
+            if (linguagem != null)
             {
-                if (linguagem.ano.Equals(ano)) //Utilizando Equals
-                {
-                    linguagemEncontrada = linguagem;
-                    break;
-                }
+                linguagem.imprimir();
+                return linguagem;
             }
 
-            return linguagemEncontrada; //Retornando Linguagem
+            return null;
         }
 
         //Buscando por nome do Desenvolvedor Chefe com Contains
         public Linguagem buscarPorDesenvolvedorChefe(string nomeDesenvolvedorChefe)
         {
-            Linguagem linguagemEncontrada = new Linguagem();
+            var linguagem = linguagens.FirstOrDefault(ling => ling.desenvolvedorChefe.Contains(nomeDesenvolvedorChefe)); //Utilizando Contains
 
-            foreach (var linguagem in linguagens)
+            if (linguagem != null)
             {
-                if (linguagem.desenvolvedorChefe != null) //Confere se a linguagem tem um desenvolvedor chefe como atributo
-                {
-                    if (linguagem.desenvolvedorChefe.Contains(nomeDesenvolvedorChefe)) //Utilizando Contains
-                    {
-                        linguagemEncontrada = linguagem;
-                        break;
-                    }
-                }
+                linguagem.imprimir();
+                return linguagem;
             }
 
-            return linguagemEncontrada; //Retornando Linguagem
+            return null;
         }
 
         //Buscando por nome do Predescessor com Contains
         public Linguagem buscarPorPredescessor(string nomePredescessor)
         {
-            Linguagem linguagemEncontrada = new Linguagem();
+            var linguagem = linguagens.FirstOrDefault(ling => ling.predecessores.Contains(nomePredescessor)); //Utilizando Contains
 
-            foreach (var linguagem in linguagens)
+            if (linguagem != null)
             {
-                if (linguagem.predecessores != null) //Confere se a linguagem tem um desenvolvedor predescessor como atributo
-                {
-                    if (linguagem.predecessores.Contains(nomePredescessor)) //Utilizando Contains
-                    {
-                        linguagemEncontrada = linguagem;
-                        break;
-                    }
-                }
+                linguagem.imprimir();
+                return linguagem;
             }
 
-            return linguagemEncontrada;
+            return null;
         }
     }
 
